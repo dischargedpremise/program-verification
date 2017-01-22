@@ -1,5 +1,5 @@
 # Program Verification Methods, Tools, and Experiments
-Our aim is to create a repository of examples and reasonably advanced content covering different aspects of program verification. We hope this will serve motivated students, teachers, and anyone interested in learning and using formal verification techniques. The inspiration for this effort comes in its purest form from [Verified software: theories, tools, experiments][http://vstte.ethz.ch/pdfs/vstte-hoare-misra.pdf].
+Our aim is to create a repository of examples and reasonably advanced content covering different aspects of program verification. We hope this will serve motivated students, teachers, and anyone interested in learning and using formal verification techniques. The inspiration for this effort comes in its purest form from [Verified software: theories, tools, experiments][TonyHoare].
 
 ## What is program verification?
 *Program verification* refers to the application of mathematical proof techniques to establish the correctness of a program with respect to a formal specification of the desired behavior. Thanks to the engineering efforts of so many researchers, quite a few excellent program verifiers are available today. Automated program verification is possible now in practical settings. 
@@ -16,3 +16,5 @@ The blog posts at [dischargedpremise][http://unthought.in] may discuss some of t
 ## Contributing to this repository
 We follow [GitHub flow][https://help.github.com/articles/github-flow/] for growing the content here. Please consider joining our effort in creating open content for learning and using program verification techniques.
 
+
+[TonyHoare]: http://vstte.ethz.ch/pdfs/vstte-hoare-misra.pdf
