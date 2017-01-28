@@ -1,7 +1,7 @@
 
 method max2(a: int, b: int) returns (max: int)
     ensures (a >= b) ==> (max == a);
-    ensures (a < b)  ==> (max == b);
+    ensures (b > a)  ==> (max == b);
 {
     max := a;
     if (b > a) {
