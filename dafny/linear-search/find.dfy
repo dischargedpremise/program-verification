@@ -5,12 +5,14 @@ method linear_search(arr: array<int>, key: int) returns (index: int)
 
     ensures (arr[..] == old(arr)[..]);
 
-    ensures (index == -1) <==> 
-      forall k :: 0 <= k < arr.Length ==> arr[k] != key;
-    
-    ensures forall k :: 0 <= k < arr.Length ==> 
-      ( (arr[k] == key && (forall j :: 0 <= j < k ==> arr[j] != key)) <==> 
-                                                             (index == k) );
+    ensures -1 <= index < arr.Length;
+
+    ensures (index == -1) <==>
+        forall k :: 0 <= k < arr.Length ==> arr[k] != key;
+
+    ensures (0 <= index < arr.Length) ==>
+        (arr[index] == key && (forall i :: 0 <= i < index ==> arr[i] != key));
+
 {
     index := 0;
     while (index < arr.Length)
@@ -47,7 +49,7 @@ method verify_linear_search()
 
     i := linear_search(a, 999);
     assert(i == -1);
-        
+
     i := linear_search(a, 1);
     assert(i == -1);
 

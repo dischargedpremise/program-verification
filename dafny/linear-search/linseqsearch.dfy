@@ -2,10 +2,12 @@
 method search_seq(ds: seq<int>, key: int) returns (index: int)
     requires |ds| > 0;
 
+    ensures -1 <= index < |ds|;
+
     ensures (index == -1) <==> key !in ds;
-    ensures forall k :: 0 <= k < |ds| ==> 
-      ( (ds[k] == key && (forall j :: 0 <= j < k ==> ds[j] != key)) <==> 
-                                                                (index == k) );
+
+    ensures (0 <= index < |ds|) ==> 
+        (ds[index] == key && (forall i :: 0 <= i < index ==> ds[i] != key));
 {
     index := 0;
     while (index < |ds|)
